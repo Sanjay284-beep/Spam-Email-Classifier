@@ -6,16 +6,11 @@ from tkinter.filedialog import askopenfilename
 import pandas as pd 
 from tkinter import simpledialog
 import matplotlib.pyplot as plt
-import cv2
-import os
 from tensorflow.keras.utils import to_categorical
 from keras.models import Sequential
 from keras.layers import Dense, Dropout, Flatten, Activation
-from keras.models import model_from_json
-import pickle
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import accuracy_score 
-import matplotlib.pyplot as plt
 from sklearn.metrics import precision_score
 from sklearn.metrics import recall_score
 from sklearn.naive_bayes import BernoulliNB
