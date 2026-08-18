@@ -179,7 +179,7 @@ def RF_NN():
     cnn_model.add(Activation('softmax'))
     cnn_model.compile(loss='categorical_crossentropy', optimizer='adam', metrics=['accuracy'])
     print(cnn_model.summary())
-    acc_history = cnn_model.fit(X, Y1, epochs=10, validation_data=(X_test1, y_test1))
+    acc_history = cnn_model.fit(X_train1, Y_train1, epochs=10, validation_data=(X_test1, y_test1))
     acc_history = acc_history.history
     acc_history = acc_history['accuracy']
     accuracy.append(acc_history[9]*100)
