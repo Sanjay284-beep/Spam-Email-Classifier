@@ -152,7 +152,7 @@ def SVM_DT_Ada():
     recall.append(ada_recall)
     precision.append(ada_precision)
     
-def RF_CNN():
+def RF_NN():
     rf = RandomForestClassifier(random_state=42)
     rf.fit(X_train, y_train)
     predict = rf.predict(X_test)
@@ -196,7 +196,7 @@ def RF_CNN():
     
 def accuracyGraph():
     height = [accuracy[0],accuracy[1],accuracy[2],accuracy[3],accuracy[4],accuracy[5],accuracy[6],accuracy[7]]
-    bars = ('KNN ACC', 'NB ACC','MLP ACC','SVM ACC','Decision Tree ACC','AdaBoost ACC','Random Forest ACC','CNN ACC')
+    bars = ('KNN ACC', 'NB ACC','MLP ACC','SVM ACC','Decision Tree ACC','AdaBoost ACC','Random Forest ACC','Neural Network ACC')
     y_pos = np.arange(len(bars))
     plt.bar(y_pos, height)
     plt.xticks(y_pos, bars)
@@ -204,7 +204,7 @@ def accuracyGraph():
 
 def recallGraph():
     height = [recall[0],recall[1],recall[2],recall[3],recall[4],recall[5],recall[6],recall[7]]
-    bars = ('KNN Recall', 'NB Recall','MLP Recall','SVM Recall','Decision Tree Recall','AdaBoost Recall','Random Forest Recall','CNN Recall')
+    bars = ('KNN Recall', 'NB Recall','MLP Recall','SVM Recall','Decision Tree Recall','AdaBoost Recall','Random Forest Recall','Neural Network Recall')
     y_pos = np.arange(len(bars))
     plt.bar(y_pos, height)
     plt.xticks(y_pos, bars)
@@ -212,7 +212,7 @@ def recallGraph():
     
 def precisionGraph():
     height = [precision[0],precision[1],precision[2],precision[3],precision[4],precision[5],precision[6],precision[7]]
-    bars = ('KNN Precision', 'NB Precision','MLP Precision','SVM Precision','Decision Tree Precision','AdaBoost Precision','Random Forest Precision','CNN Precision')
+    bars = ('KNN Precision', 'NB Precision','MLP Precision','SVM Precision','Decision Tree Precision','AdaBoost Precision','Random Forest Precision','Neural Network Precision')
     y_pos = np.arange(len(bars))
     plt.bar(y_pos, height)
     plt.xticks(y_pos, bars)
@@ -246,7 +246,7 @@ secondButton = Button(main, text="Run SVM, Decision Tree & AdaBoost Algorithms",
 secondButton.place(x=940,y=100)
 secondButton.config(font=font1)
 
-thirdButton = Button(main, text="Run Random Forest & CNN Algorithm", command=RF_CNN)
+thirdButton = Button(main, text="Run Random Forest & CNN Algorithm", command=RF_NN)
 thirdButton.place(x=10,y=150)
 thirdButton.config(font=font1)
 
