@@ -180,9 +180,8 @@ def RF_NN():
     cnn_model.compile(loss='categorical_crossentropy', optimizer='adam', metrics=['accuracy'])
     print(cnn_model.summary())
     acc_history = cnn_model.fit(X_train1, Y_train1, epochs=10, validation_data=(X_test1, y_test1))
-    acc_history = acc_history.history
-    acc_history = acc_history['accuracy']
-    accuracy.append(acc_history[9]*100)
+    test_loss, test_accuracy = cnn_model.evaluate(X_test1, Y_test1)
+    accuracy.append(test_accuracy * 100)
     predict = cnn_model.predict(X_test1)
     predict = np.argmax(predict, axis=1)
     testY = np.argmax(y_test1, axis=1)
@@ -192,7 +191,7 @@ def RF_NN():
     precision.append(cnn_precision)
     text.insert(END,"CNN Precision : "+str(cnn_precision)+"\n")
     text.insert(END,"CNN Recall    : "+str(cnn_recall)+"\n")
-    text.insert(END,"CNN Accuracy  : "+str(acc_history[9]*100)+"\n")
+    text.insert(END,"Neural Network Accuracy  : "+str(test_accuracy*100)+"\n")
     
 def accuracyGraph():
     height = [accuracy[0],accuracy[1],accuracy[2],accuracy[3],accuracy[4],accuracy[5],accuracy[6],accuracy[7]]
