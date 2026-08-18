@@ -62,7 +62,7 @@ def preprocess():
     np.random.shuffle(indices)
     X = X[indices]
     Y = Y[indices]
-    X_train, X_test, y_train, y_test = train_test_split(X, Y, test_size=0.2)
+    X_train, X_test, y_train, y_test = train_test_split(X, Y, test_size=0.2, random_state=42)
     text.insert(END,"Total spam & non spam records found in dataset is : "+str(len(X))+"\n")
     text.insert(END,"Splitting dataset into train & test. ML will user 80% dataset size for training and 20% for testing\n")
     text.insert(END,"Splitted training records = "+str(len(X_train))+"\n")
