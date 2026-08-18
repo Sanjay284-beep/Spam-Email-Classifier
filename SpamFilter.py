@@ -180,8 +180,8 @@ def RF_NN():
     cnn_recall = recall_score(testY, predict,average='macro') * 100
     recall.append(cnn_recall)
     precision.append(cnn_precision)
-    text.insert(END,"CNN Precision : "+str(cnn_precision)+"\n")
-    text.insert(END,"CNN Recall    : "+str(cnn_recall)+"\n")
+    text.insert(END,"Neural Network Precision : "+str(cnn_precision)+"\n")
+    text.insert(END,"Neural Network Recall    : "+str(cnn_recall)+"\n")
     text.insert(END,"Neural Network Accuracy  : "+str(test_accuracy*100)+"\n")
     
 def accuracyGraph():
