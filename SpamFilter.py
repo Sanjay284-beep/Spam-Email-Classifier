@@ -54,10 +54,10 @@ def preprocess():
     text.delete('1.0', END)
     global X, Y
     global dataset
-    dataset = dataset.values
-    cols = dataset.shape[1]-1
-    X = dataset[:,0:cols]
-    Y = dataset[:,cols]
+    data = dataset.values
+    cols = data.shape[1]-1
+    X = data[:,0:cols]
+    Y = data[:,cols]
     indices = np.arange(X.shape[0])
     np.random.shuffle(indices)
     X = X[indices]
