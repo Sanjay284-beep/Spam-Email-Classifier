@@ -153,7 +153,7 @@ def SVM_DT_Ada():
     precision.append(ada_precision)
     
 def RF_CNN():
-    rf = svm.SVC()
+    rf = RandomForestClassifier(random_state=42)
     rf.fit(X_train, y_train)
     predict = rf.predict(X_test)
     rf_precision = precision_score(y_test, predict,average='macro') * 100
