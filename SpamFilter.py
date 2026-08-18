@@ -236,7 +236,7 @@ secondButton = Button(main, text="Run SVM, Decision Tree & AdaBoost Algorithms",
 secondButton.place(x=940,y=100)
 secondButton.config(font=font1)
 
-thirdButton = Button(main, text="Run Random Forest & CNN Algorithm", command=RF_NN)
+thirdButton = Button(main, text="Run Random Forest & Neural Network", command=RF_NN)
 thirdButton.place(x=10,y=150)
 thirdButton.config(font=font1)
 
