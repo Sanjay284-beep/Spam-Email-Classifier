@@ -47,7 +47,7 @@ def upload():
     text.delete('1.0', END)
     text.insert(END,filename+' Loaded\n\n')
     dataset = pd.read_csv(filename)
-    text.insert(END,str(dataset.head))
+    text.insert(END,str(dataset.head()))
     
 def preprocess():
     global X_train, X_test, y_train, y_test
